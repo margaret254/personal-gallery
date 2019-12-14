@@ -13,3 +13,8 @@ def photo_category(request):
     date = dt.date.today()
     return render(request, 'all-folios/category.html', {"date": date,})
 
+def travel(request):
+    date = dt.date.today()
+    return render(request, 'all-folios/travel.html', {"date": date,})
+
+
