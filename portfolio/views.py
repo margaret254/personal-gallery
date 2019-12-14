@@ -7,19 +7,10 @@ import datetime as dt
 
 # Create your views here.
 def welcome(request):
-    return render(request, 'Welcome.html')
-    
+    return render(request, 'welcome.html')
+
+# displaying different photo categories in cards
 def photo_category(request):
     date = dt.date.today()
-    return HttpResponse
+    return render(request, 'all-folios/category.html', {"date": date,})
 
-def convert_dates(dates):
-    # function that gets the weekday number for the date
-    day_number = dt.date.weekday(dates)
-
-    days = ['Monday','Tuesday','Wedneasday','Thursday','Friday','Saturday','Sunday']
-
-    # Returning the actual day of the week
-    day = days[day_number]
-    return day
-    
