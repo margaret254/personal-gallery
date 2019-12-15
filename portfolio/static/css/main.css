@@ -1,3 +1,16 @@
+.navbar{
+  background-color:#7C90A0;
+  height: 80px;
+}
+
+body{
+  background-color: #B2BCAA;
+}
+
+.jumbotron{
+  background-color: #B2BCAA;
+}
+
 h2
 {
   color: green;
@@ -26,6 +39,13 @@ footer
 .logo
 {
   height: 8vh;
+}
+
+img{
+  padding-top:20px;
+  width:400px;
+  height:400px;
+  border-radius: 100px;
 }
 @media (max-width: 768px)
 {
