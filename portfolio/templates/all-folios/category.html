@@ -5,17 +5,17 @@
 <div class="container">
     <div class="row">
 {% for portfolio_item in portfolio %}
-        <div class="col-md-6">
-            <div class="card">
+        <div class="col-md-3">
+            
         <div class="add-data">
         <a href="" data-toggle="modal" data-target="#{{portfolio_item.id}}">
             <img src="{{portfolio_item.category_image.url}}" class="img-responsive img-thumbnail" alt="Image">
             <h4 class="bold">{{portfolio_item.category}}</h4>
         </a>
-    </div>
+    
 </div>
 </div>
-<div class="modal fade" id="{{portfolio_item.id}}" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+<div class="modal fade mode" id="{{portfolio_item.id}}" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -32,11 +32,12 @@
                 <p>{{portfolio_item.posted_date}}</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="text" id="" value="{{portfolio_item.category_image.url}}">
+                
                 
             </div>
         </div>
-    </div>
+    </div>/
 </div>
 </a>
 

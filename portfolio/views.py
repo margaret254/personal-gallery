@@ -15,6 +15,10 @@ def photo_category(request):
     portfolio = Image.objects.all
     return render(request, 'all-folios/category.html', {"date": date, "portfolio": portfolio})
 
+def about(request):
+    date = dt.date.today()
+    return render(request, 'all-folios/about.html', {"date": date,})
+
 def search_results(request):
     if 'image' in request.GET and request.GET["image"]:
         search_term = request.GET.get("image")
