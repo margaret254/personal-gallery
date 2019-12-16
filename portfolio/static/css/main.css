@@ -16,29 +16,10 @@ h2
   color: green;
 }
 
-.card{
-    padding-top:50px;
-    height:300px;
-    width:300px;
-
-}
-
-.c2{
-    padding-top:50px;
-}
-
 footer
 {
   padding-top: 5vh;
   padding-bottom: 2vh;
-}
-.copyright,  .impressum
-{
-  text-align: center;
-}
-.logo
-{
-  height: 8vh;
 }
 
 img{
@@ -46,11 +27,4 @@ img{
   width:400px;
   height:400px;
   border-radius: 100px;
-}
-@media (max-width: 768px)
-{
-  .sozial
-  {
-    margin-bottom: 1vh;
-  }
 }
