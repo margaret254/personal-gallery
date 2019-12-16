@@ -3,6 +3,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import datetime as dt
+from .models import *
 
 # Create your views here.
 def welcome(request):
@@ -11,31 +12,18 @@ def welcome(request):
 # displaying different photo categories in cards
 def photo_category(request):
     date = dt.date.today()
-    return render(request, 'all-folios/category.html', {"date": date,})
+    portfolio = Image.objects.all
+    return render(request, 'all-folios/category.html', {"date": date, "portfolio": portfolio})
 
-def travel(request):
-    date = dt.date.today()
-    return render(request, 'all-folios/travel.html', {"date": date,})
+def search_results(request):
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_images = Image.search_by_category(search_term)
+        message = f"{search_term}"
 
-def school(request):
-    date = dt.date.today()
-    return render(request, 'all-folios/school.html', {"date": date,})
+        return render(request, 'all-folios/search.html',{"message":message,"images": searched_images})
 
-def party(request):
-    date = dt.date.today()
-    return render(request, 'all-folios/party.html', {"date": date,})
-
-def nature(request):
-    date = dt.date.today()
-    return render(request, 'all-folios/nature.html', {"date": date,})
-
-def hiking(request):
-    date = dt.date.today()
-    return render(request, 'all-folios/hiking.html', {"date": date,})
-
-def family(request):
-    date = dt.date.today()
-    return render(request, 'all-folios/family.html', {"date": date,})
-
-
+    else:
+        message = "You haven't searched for any term"
+        return render(request,'all-folios/search.html',{"message":message})
 
