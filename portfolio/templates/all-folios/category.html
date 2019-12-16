@@ -2,52 +2,46 @@
 
 {% block content%}
 {{block.super}}
-<div class="container ">
+<div class="container">
     <div class="row">
+{% for portfolio_item in portfolio %}
         <div class="col-md-6">
-                <img src="https://www.intrepidtravel.com/adventures/wp-content/uploads/2018/10/2-Kids-Involved-IMG_1072.JPG-Prague-e1537505319670.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Travelling Photos</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="/travel/" class="btn btn-primary">See More</a>
-                </div>
-                
+            <div class="card">
+        <div class="add-data">
+        <a href="" data-toggle="modal" data-target="#{{portfolio_item.id}}">
+            <img src="{{portfolio_item.category_image.url}}" class="img-responsive img-thumbnail" alt="Image">
+            <h4 class="bold">{{portfolio_item.category}}</h4>
+        </a>
     </div>
-    <div class="col-md-6">
-            
-                    <img src="https://files.slack.com/files-pri/T077KKCG6-FRQ5RHJ8G/img-20191111-wa0010.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">School Photos</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="/school/" class="btn btn-primary">See More</a>
-                    </div>
-                    
+</div>
+</div>
+<div class="modal fade" id="{{portfolio_item.id}}" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title uppercase capital bold " id="myModalLabel">{{portfolio_item.title}}</h3>
+
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <img src="{{portfolio_item.category_image.url}}" class="img-responsive img-thumbnail" alt="Image">
+                </div>
+                <h4>{{portfolio_item.location}}</h4>
+                <p>{{portfolio_item.description}}</p>
+                <p>{{portfolio_item.posted_date}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+            </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-6">
-                
-                        <img src="https://www.jing.fm/clipimg/detail/175-1754231_music-of-africa-clip-art-djembe-animation.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Party Photos</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="/party/" class="btn btn-primary">See More</a>
-                        
-                        </div>
-            </div>
-
-            <div class="col-md-6">
-                    
-                            <img src="https://dailynews.mcmaster.ca/wp-content/uploads/sites/3/2017/03/forest-1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Nature Photos</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="/nature/" class="btn btn-primary">See More</a>
-                            </div>
-                            
-                </div>
-
 </div>
+</a>
+
+
+{% endfor%}
 </div>
+    </div>
 {% endblock %}
