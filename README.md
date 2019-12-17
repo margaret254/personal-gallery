@@ -10,7 +10,7 @@ Its designed with love and passion for africa,  and thus, most of the images wil
 of africa scenery.To view the different images, you will have to search the following categories in the search bar:
 Hiking, Nature,Tavel and Fashion
 
-# link of the deployed site (https://serah254gallery.herokuapp.com/)
+# link to deployed site (https://serah254gallery.herokuapp.com/)
 
 
 ## User Stories
