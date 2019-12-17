@@ -10,6 +10,8 @@ Its designed with love and passion for africa,  and thus, most of the images wil
 of africa scenery.To view the different images, you will have to search the following categories in the search bar:
 Hiking, Nature,Tavel and Fashion
 
+# link of the deployed site (https://serah254gallery.herokuapp.com/)
+
 
 ## User Stories
 These are the behaviours/features that the application implements for use by a user.
@@ -36,12 +38,6 @@ As a user I would like to:
 
         $ python3.6 -m venv --without-pip virtual
         $ source virtual/bin/env
-        
-* Installing Flask and other Modules
-
-       Use  $ python3.6 -m pip install  to install all your modules
-       for example: python3.6 -m pip install flask
-        
         
 * To run the application, in your terminal:
         python3.6 manage.py runserver
