@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url 
 from decouple import config,Csv
 
 MODE=config("MODE",default="dev")
@@ -167,10 +168,5 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-import dj_database_url 
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
 
 django_heroku.settings(locals())
